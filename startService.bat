@@ -1,0 +1,1 @@
+JAVA -jar studentApp.jar
