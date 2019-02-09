@@ -28,18 +28,22 @@ public class StudentsPatchTest {
         String body = "{\"id\":\"1\",\"firstName\":\"Test Company\",\"lastName\":\"Man\",\"email\":\"test.man@massaQuisqueporttitor.org\",\"programme\":\"Financial Analysis\",\"courses\":[\"Accounting\",\"Statistics\"]}";
 
         given()
-                .contentType(ContentType.JSON)
-                .when()
-                .body(body)
-                .patch("1")
-                .then()
-                .statusCode(200);
+            .contentType(ContentType.JSON)
+        .when()
+            .body(body)
+            .patch("1")
+        .then()
+            .statusCode(200);
     }
 
     @Test
     public void Delete_UsingRest()
     {
-        given().when().delete("101").then().statusCode(204);
+        given()
+        .when()
+            .delete("101")
+        .then()
+            .statusCode(204);
     }
 
     @Test
@@ -47,7 +51,12 @@ public class StudentsPatchTest {
     {
         String expectedResponse = "{\"error\":\"Not Found!\"}";
 
-        given().when().delete("101").thenReturn().asString().equals(expectedResponse);
+        given()
+        .when()
+            .delete("101")
+        .thenReturn()
+            .asString()
+            .equals(expectedResponse);
     }
 
     @Test
@@ -65,11 +74,11 @@ public class StudentsPatchTest {
         student.setCourses(courses);
 
         given()
-                .contentType(ContentType.JSON)
-                .when()
-                .body(student)
-                .patch("/101")
-                .then()
-                .statusCode(200);
+            .contentType(ContentType.JSON)
+        .when()
+            .body(student)
+            .patch("/101")
+        .then()
+            .statusCode(200);
     }
 }
