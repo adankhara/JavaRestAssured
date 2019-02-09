@@ -29,19 +29,19 @@ public class StudentPostTests {
         courses.add("Java");
 
         Student student = new Student();
-        student.setFirstName("Rajnikant");
-        student.setLastName("Dankhara");
-        student.setEmail("rajnikant.dankhara@gmail.com");
-        student.setProgramme("Computer Science");
-        student.setCourses(courses);
+        student.setFirstName("Rajnikant")
+                .setLastName("Dankhara")
+                .setEmail("rajnikant.dankhara@gmail.com")
+                .setProgramme("Computer Science")
+                .setCourses(courses);
 
         given()
-                .contentType(ContentType.JSON)
-                .when()
-                .body(student)
-                .post()
+            .contentType(ContentType.JSON)
+        .when()
+            .body(student)
+            .post()
         .then()
-        .statusCode(201);
+            .statusCode(201);
     }
 
     @Test
@@ -50,11 +50,11 @@ public class StudentPostTests {
         String body = "{\"firstName\":\"Test\",\"lastName\":\"Man\",\"email\":\"test.man@massaQuisqueporttitor.org\",\"programme\":\"Financial Analysis\",\"courses\":[\"Accounting\",\"Statistics\"]}";
 
         given()
-                .contentType(ContentType.JSON)
-                .when()
-                .body(body)
-                .post()
-                .then()
-                .statusCode(201);
+            .contentType(ContentType.JSON)
+        .when()
+            .body(body)
+            .post()
+        .then()
+            .statusCode(201);
     }
 }

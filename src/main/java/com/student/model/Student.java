@@ -16,39 +16,44 @@ public class Student {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public Student setFirstName(String firstName) {
         this.firstName = firstName;
+        return this;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public Student setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public Student setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public String getProgramme() {
         return programme;
     }
 
-    public void setProgramme(String programme) {
+    public Student setProgramme(String programme) {
         this.programme = programme;
+        return this;
     }
 
     public List<String> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<String> courses) {
+    public Student setCourses(List<String> courses) {
         this.courses = courses;
+        return this;
     }
 }
